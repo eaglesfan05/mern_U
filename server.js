@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const bodyParser = require("body-parser");
 const app = express();
 
 // Connect Database
@@ -7,6 +8,7 @@ connectDB();
 
 // init middleware to get the data from req.body
 app.use(express.json({ extended: false }));
+app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => res.send("API Running"));
