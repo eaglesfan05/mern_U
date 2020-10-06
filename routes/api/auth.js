@@ -73,6 +73,7 @@ router.post(
           if (err) throw err;
           // res.send({ token });
           res.json({ token });
+          console.log(token);
         }
       );
     } catch (err) {
